@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+#courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.coursecard {
+    border: solid thin #000000;
+    flex-basis: calc(25% - 1em);
+    padding: 1rem;
+}
