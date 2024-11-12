@@ -5,20 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harvard Extension School Courses in CSCI and DGMD for Spring Term</title>
-    <script src="scripts/coursesData.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"
+    integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="scripts/coursesData.js"></script>
+    <script src="scripts/templates.js"></script>
+    <link rel="stylesheet" href="styles/site.css">
     <!-- the coursesData.js script contains the course data
          and is available as a global variable 'coursesData'
         -->
-        <!-- coursesData consists of a "courses" array,
-        with each course in the array have properties of:
-            "code",
-            "title",
-            "crn",
-            "catalog_url",
-            "meets",
-            "instr",
-            "term"
-        -->
+    <!-- coursesData consists of a "courses" array,
+    with each course in the array have properties of:
+        "code",
+        "title",
+        "crn",
+        "catalog_url",
+        "meets",
+        "instr",
+        "term"
+    -->
     <script>
         /* this is here just to show that coursesData.js loading
            provides the "coursesData" variable and data */
@@ -26,6 +31,21 @@
     </script>
 </head>
 <body>
-    
+    <header>
+        <h1>Harvard Extension Courses <br>CSCI and DGMD Courses for Spring Term</h1>
+    </header>
+    <main>
+        <div id="courses"></div>
+    </main>    
+    <template id="courseList">
+        <div class="coursecard">
+            <h2>{{code}}</h2>
+            <a href="{{catalog_url}}">{{title}}</a>
+            <div>{{crn}}</div>
+            <div><i>{{instr}}</i></div>
+            <div>{{meets}}</div>
+            <div>{{term}}</div>
+        </div>
+     </template>
 </body>
 </html>
